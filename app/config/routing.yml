@@ -1,0 +1,5 @@
+mi_chango_crons:
+    resource: "@MiChangoCronsBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
