@@ -3,17 +3,20 @@
 namespace MiChango\CronsBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 class DefaultController extends Controller
 {
     /**
-     * @Route("/hello/{name}")
-     * @Template()
+     * @Route("/supers/{super}/productos")
+     * @Method({"POST"})
      */
-    public function indexAction($name)
+    public function productsAction(Request $request, $super)
     {
-        return array('name' => $name);
+        error_log($super);
+        return array('name' => $super);
     }
 }
